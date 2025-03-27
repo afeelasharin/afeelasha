@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AFEELA SHARIN KP - BSc Computer Science</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Times New Roman', sans-serif;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fad0c4, #ffdde1);
+      color: #333;
+      text-align: center;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+
+    /* Navbar */
+    .navbar {
+      padding: 10px;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+      background: transparent;
+      z-index: 1000;
+    }
+
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 50px;
+      right: 20px;
+      background: rgba(255, 255, 255, 0.2); /* More transparency */
+      padding: 10px;
+      width: 200px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(10px); /* Stronger glass effect */
+    }
+
+    .nav-links a {
+      color: rgb(15, 15, 15);
+      text-decoration: none;
+      font-weight: bold;
+      padding: 12px;
+      display: block;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .hamburger {
+      font-size: 24px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      color: rgb(9, 9, 9);
+      margin-right: 20px;
+    }
+
+    /* Home Page */
+    .home {
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      flex-direction: column;
+      position: relative;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInUp 1s ease-out forwards;
+    }
+
+    .home img {
+      width: 100%;
+      height: 100vh;
+      object-fit: cover;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+    }
+
+    .content {
+      position: absolute;
+      z-index: 1;
+      color: rgb(128, 49, 49);
+      text-align: center;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 1s ease-out 0.5s forwards;
+    }
+   
+    h1 {
+      font-size: 2em;
+    }
+
+    p {
+      font-size: 1.3em;
+    }
+
+    /* Page Animation */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+
+    a {
+      color: rgb(24, 24, 24);
+      text-decoration: none;
+      font-weight: bold;
+    }
+    h2 {
+      font-size: 2.8em;
+      margin-bottom: 20px;
+    }
+    p {
+      font-size: 1.2em;
+      line-height: 1.6;
+    }
+
+    /* Animated Sections */
+    .section {
+      display: none;
+      position: absolute;
+      top: 0;
+      width: 100%;
+      height: 100vh;
+      text-align: center;
+      padding-top: 100px;
+      transform: translateX(100%);
+      transition: transform 0.7s ease-in-out;
+    }
+
+    .section.active {
+      display: block;
+      transform: translateX(0);
+
+    }
+    
+    
+    
+    /* Colorful Pages */
+    #about { background: linear-gradient(135deg, #ff7eb3, #ff758c); color: black; }
+    #resume { background: linear-gradient(135deg, #84fab0, #8fd3f4); color: black; }
+    #skills { background: linear-gradient(135deg, #ff9a9e, #fad0c4); color: black; }
+    #contact { background: linear-gradient(135deg, #f08553, #b9459a); color: black }
+
+    #about img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      border: 5px solid white;
+      margin-top: 20px;
+    }
+   
+    
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <div class="navbar">
+    <button class="hamburger" onclick="toggleMenu()">&#9776;</button>
+    <div class="nav-links" id="navLinks">
+      <a href="javascript:void(0);" onclick="showSection('home')">Home</a>
+      <a href="javascript:void(0);" onclick="showSection('about')">About Me</a>
+      <a href="javascript:void(0);" onclick="showSection('resume')">Resume</a>
+      <a href="javascript:void(0);" onclick="showSection('skills')">Skills</a>
+      <a href="javascript:void(0);" onclick="showSection('contact')">Contact</a>
+    </div>
+  </div>
+
+  <!-- Home Page -->
+  <div id="home" class="home">
+    <img src="taj.jpg" alt="Background Photo">
+    <div class="content">
+      <h1>AFEELA SHARIN KP</h1>
+      <p>BSc Computer Science Student | Aspiring Software Engineer</p>
+    </div>
+  </div>
+
+  <!-- Animated Sections -->
+  <section id="about" class="section">
+    <h2>About Me</h2>
+    <img src="Afeela.jpeg" alt="Passport Size Photo">
+    <p>Dedicated Computer Science student with a strong interest in technology and innovation. Served as  an NCC Under Officer, I've developed valuable leadership and  organizational skill that  complement my technical abilities.</p>
+  </section>
+  
+  <section id="resume" class="section">
+    <h2>Resume</h2>
+    <h3>EDUCATION</h3>
+  -----------------------------------<br><br>
+  <p><h4>[Bachelor of Computer Science]<br>  
+  University of Calicut (2022 - 2025)<br><br>
+  <h3>AREA OF INTEREST</h3>
+  -----------------------------------<br><br>
+  [Web designing] <br> [web development] <br><br>
+  <h3>KEY SKILLS AND CHARACTERISTICS</h3>
+  -----------------------------------<br><br>
+  [Communication Skill <br> Team Building<br>Leadership<br>Problem Solving<br>Microsoft Excel<br>Microsoft Word</h4>
+  </p>
+  </section>
+
+  <section id="skills" class="section">
+    <h2>Skills</h2><br><br>
+  
+    <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+  
+      <!-- Skill Item -->
+      <div style="padding: 12px 25px; font-size: 18px; font-weight: bold; 
+                  background: linear-gradient(135deg, #ff7eb3, #ff758c); 
+                  color: white; border-radius: 8px; box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2); 
+                  transition: 0.4s ease-in-out; text-align: center;"
+           onmouseover="this.style.transform='scale(1.1)'; this.style.boxShadow='0 0 15px rgba(255, 120, 150, 0.8)'"
+           onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='3px 3px 10px rgba(0, 0, 0, 0.2)'">
+        Java
+      </div>
+  
+      <div style="padding: 12px 25px; font-size: 18px; font-weight: bold; 
+                  background: linear-gradient(135deg, #84fab0, #8fd3f4); 
+                  color: black; border-radius: 8px; box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2); 
+                  transition: 0.4s ease-in-out; text-align: center;"
+           onmouseover="this.style.transform='scale(1.1)'; this.style.boxShadow='0 0 15px rgba(132, 250, 176, 0.8)'"
+           onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='3px 3px 10px rgba(0, 0, 0, 0.2)'">
+        Python Django
+      </div>
+  
+      <div style="padding: 12px 25px; font-size: 18px; font-weight: bold; 
+                  background: linear-gradient(135deg, #ffcc00, #ffdd44); 
+                  color: black; border-radius: 8px; box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2); 
+                  transition: 0.4s ease-in-out; text-align: center;"
+           onmouseover="this.style.transform='scale(1.1)'; this.style.boxShadow='0 0 15px rgba(255, 204, 0, 0.8)'"
+           onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='3px 3px 10px rgba(0, 0, 0, 0.2)'">
+        C
+      </div>
+  
+      <div style="padding: 12px 25px; font-size: 18px; font-weight: bold; 
+                  background: linear-gradient(135deg, #ff9a9e, #fad0c4); 
+                  color: black; border-radius: 8px; box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2); 
+                  transition: 0.4s ease-in-out; text-align: center;"
+           onmouseover="this.style.transform='scale(1.1)'; this.style.boxShadow='0 0 15px rgba(255, 154, 158, 0.8)'"
+           onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='3px 3px 10px rgba(0, 0, 0, 0.2)'">
+        HTML & CSS
+      </div>
+  
+      <div style="padding: 12px 25px; font-size: 18px; font-weight: bold; 
+                  background: linear-gradient(135deg, #b9459a, #d964a9); 
+                  color: white; border-radius: 8px; box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2); 
+                  transition: 0.4s ease-in-out; text-align: center;"
+           onmouseover="this.style.transform='scale(1.1)'; this.style.boxShadow='0 0 15px rgba(185, 69, 154, 0.8)'"
+           onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='3px 3px 10px rgba(0, 0, 0, 0.2)'">
+        JavaScript
+      </div>
+  
+      <div style="padding: 12px 25px; font-size: 18px; font-weight: bold; 
+                  background: linear-gradient(135deg, #8fd3f4, #4a90e2); 
+                  color: white; border-radius: 8px; box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2); 
+                  transition: 0.4s ease-in-out; text-align: center;"
+           onmouseover="this.style.transform='scale(1.1)'; this.style.boxShadow='0 0 15px rgba(79, 195, 247, 0.8)'"
+           onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='3px 3px 10px rgba(0, 0, 0, 0.2)'">
+        SQL
+      </div>
+  
+    </div>
+  </section>
+
+  <section id="contact" class="section">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:afeelasharin68@gmail.com">afeelasharin68@gmail.com</a></p>
+  <br><br>
+  
+   <!-- Social Media Links (Icons Only) -->
+   <p style="font-size: 100px;">
+    <a href="https://www.instagram.com/afeela_sharin_?igsh=djFpeDM0azExd2xs" target="_blank" style="color: rgb(44, 50, 44); text-decoration: none; margin-right: 20px;">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" width="40" height="40">
+    </a>  
+    
+    <a href="https://www.linkedin.com/in/afeela-sharin-kp-16875b318?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" style="color: rgb(70, 94, 70); text-decoration: none;">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt="LinkedIn" width="40" height="40">
+    </a>
+  </p>
+  
+  <!-- JavaScript -->
+  <script>
+    function toggleMenu() {
+      let menu = document.getElementById("navLinks");
+      menu.style.display = menu.style.display === "block" ? "none" : "block";
+    }
+
+    function showSection(sectionId) {
+      // Hide all sections
+      document.querySelectorAll(".section").forEach(section => {
+        section.classList.remove("active");
+        section.style.display = "none";
+      });
+
+      if (sectionId === "home") {
+        document.getElementById("home").style.display = "flex";
+      } else {
+        document.getElementById("home").style.display = "none";
+        let selectedSection = document.getElementById(sectionId);
+        selectedSection.style.display = "block";
+        setTimeout(() => selectedSection.classList.add("active"), 10);
+      }
+
+      // Hide menu after selection
+      document.getElementById("navLinks").style.display = "none";
+    }
+    
+  </script>
+</body>
+</html>
